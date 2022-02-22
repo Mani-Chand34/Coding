@@ -7,14 +7,11 @@ int lastIndex(int input[], int size, int x) {
      Return output and don't print it.
      Taking input and printing output is handled automatically.
   */
-    if(size == 0) return -1;
-    static int i=0;
-    static int res=-1;
-    if(input[i]==x) res = i;
-    int out = lastIndex(input+1,size-1,x);
-    if(res==-1 and input[0]==x) return 0;
-    else if(res==-1) return -1;
-    else return res+1; 
+    if(size==0) return -1;
+    int ans = lastIndex(input+1,size-1,x);
+    if(ans!=-1) return ans + 1;
+    if(input[0] == x) return 0;
+    else return -1;
 }
 
 int main() {
